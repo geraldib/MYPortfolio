@@ -12,3 +12,4 @@ LICENSE
 README.md
 /local_packages/portfolio_site/node_modules/*
 /local_packages/portfolio_site/vendor/*
+!/local_packages/portfolio_site/composer.json
