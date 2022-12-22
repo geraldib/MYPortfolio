@@ -1,0 +1,34 @@
+@mixin col-width($colNr) {
+    width: calc(100% / 12 * $colNr);
+}
+  
+@mixin col-margin($marginRight: 0, $marginLeft: 0) {
+margin-right: calc(100% / 12 * $marginRight);
+margin-left: calc(100% / 12 * $marginLeft);
+}
+
+@mixin breakpointDown($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+  
+@mixin breakpointUp($breakpointMin) {
+  @if map-has-key($breakpointsMin, $breakpointMin) {
+    @media #{inspect(map-get($breakpointsMin, $breakpointMin))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpointMin}`. "
+    + "Available breakpoints are: #{map-keys($breakpointsMin)}.";
+  }
+}

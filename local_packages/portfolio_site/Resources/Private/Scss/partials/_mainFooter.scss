@@ -1,0 +1,17 @@
+.main-footer {
+    width: 100%;
+    background-color: $primary_color;
+    &__container{
+        @include col-width(10);
+        margin: 0 auto;
+        @include flex-container(row, space-between, center);
+    }
+    &__text {
+        color: $base_color;
+    }
+    &__contact {
+        color: $base_color;
+        @include col-width(3);
+        @include flex-container(row, space-between, center);
+    }
+}

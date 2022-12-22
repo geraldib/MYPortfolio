@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+nbproject
+/.vscode
+/config
+/vendor
+/public
+/var
+/vendor
+composer.json
+composer.lock
+LICENSE
+README.md
+/local_packages/portfolio_site/node_modules/*
+/local_packages/portfolio_site/vendor/*

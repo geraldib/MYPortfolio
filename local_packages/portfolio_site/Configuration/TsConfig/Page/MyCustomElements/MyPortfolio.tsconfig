@@ -1,0 +1,23 @@
+
+#############
+#### RTE ####
+#############
+mod.wizards.newContentElement.wizardItems {
+        portfolio.header = MyPortfolio Elements
+}
+mod.wizards.newContentElement.wizardItems {
+    portfolio {
+        elements {
+            HeroElement {
+                iconIdentifier = content-target
+                title = Hero Slider
+                description = A hero slider element
+                tt_content_defValues {
+                    CType = my_portfolio_element
+                }
+            }
+        }
+        show := addToList(HeroElement, inheritanceElement)
+    }
+}
+              

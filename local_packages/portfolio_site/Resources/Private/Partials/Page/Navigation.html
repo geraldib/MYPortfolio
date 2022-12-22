@@ -1,0 +1,25 @@
+<div class="main-navigation">
+    <div class="main-navigation__container">
+        <h2 class="main-navigation__brand">Portfolio</h2>
+        <ul class="main-navigation__menu">
+            <f:for each="{mainnavigation}" as="mainnavigationItem">
+                <li class="main-navigation__link{f:if(condition: mainnavigationItem.active, then:' main-navigation__link--active')}">
+                    <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+                        {mainnavigationItem.title}
+                    </a>
+                    <f:if condition="{mainnavigationItem.children}">
+                        <ul class="main-navigation__submenu{f:if(condition: mainnavigationItem.active, then:' main-navigation__submenu--active')}">
+                            <f:for each="{mainnavigationItem.children}" as="child">
+                                <li class="main-navigation__sublink {f:if(condition: child.active, then:' main-navigation__sublink--active')}">
+                                    <a href="{child.link}" target="{child.target}" title="{child.title}">
+                                        {child.title}
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</div>

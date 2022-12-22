@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <table border="1" cellspacing="1" cellpadding="5">
+        <tr>
+            <td>Project name</td>
+            <td>Project description</td>
+            <td>Quantity</td>
+        </tr>
+        <f:for each="{projects}" as="project">
+            <tr>
+                <td align="top">{project.name}</td>
+                <td align="top">
+                    <f:format.crop maxCharacters="100">{project.description}</f:format.crop>
+                </td>
+                <td align="top">{project.image}</td>
+            </tr>
+        </f:for>
+    </table>
+    <f:debug title="" inline="1">{_all}</f:debug>
+</html>
