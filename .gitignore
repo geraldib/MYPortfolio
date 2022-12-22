@@ -7,8 +7,7 @@ nbproject
 /public
 /var
 /vendor
-composer.json
-composer.lock
+composer.*
 LICENSE
 README.md
 /local_packages/portfolio_site/node_modules/*
