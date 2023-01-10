@@ -22,11 +22,12 @@ class Project extends AbstractEntity
     protected $description = '';
 
     /**
-     * The image in the store inventory
+     * project main image
      *
-     * @var int
-     **/
-    protected $image = 0;
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * use TYPO3\CMS\Extbase\Annotation\ORM\Cascade
+     */
+    protected $mainImage = null;
 
     /**
      * project constructor.
@@ -35,11 +36,10 @@ class Project extends AbstractEntity
      * @param string $description
      * @param int $image
      */
-    public function __construct($name = '', $description = '', $image = 0)
+    public function __construct($name = '', $description = '')
     {
         $this->setName($name);
         $this->setDescription($description);
-        $this->setImage($image);
     }
 
     /**
@@ -83,22 +83,50 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets the image in the store inventory of the project
+     * Get main image
      *
-     * @param int $image
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
-    public function setImage(int $image)
+    public function getMainImage()
     {
-        $this->image = $image;
+        return $this->mainImage;
     }
 
+
+
     /**
-     * Gets the image in the store inventory of the project
+     * Set main image
      *
-     * @return int
+     * param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $mainImage
+     *
+     * @return void
      */
-    public function getImage()
+    public function setMainImage($mainImage)
     {
-        return $this->image;
+        $this->mainImage = $mainImage;
+    }
+
+
+
+    /**
+     * Add project main image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function addMainImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->mainImage->attach($image);
+    }
+
+
+
+    /**
+     * Remove project main image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function removeMainImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->mainImage->detach($image);
     }
 }

@@ -223,9 +223,23 @@ tt_content {
         dataProcessing{
             10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
             10 {
+                references.table = tt_content
                 references.fieldName = image
                 as = slider_images
             }
         }
     }
-}              
+}    
+
+// lib.carousel = FLUIDTEMPLATE
+// lib.carousel {
+//         file = EXT:portfolio_site/Resources/Private/Templates/MyCustomElements/HeroSlider.html
+//         dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+//         dataProcessing.10 {
+//                 references {
+//                         table = tt_content
+//                         fieldName = image
+//                 }
+//                 as = images
+//         }
+// }

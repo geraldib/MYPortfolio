@@ -1,19 +1,18 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-    <table border="1" cellspacing="1" cellpadding="5">
-        <tr>
-            <td>Project name</td>
-            <td>Project description</td>
-            <td>Quantity</td>
-        </tr>
-        <f:for each="{projects}" as="project">
-            <tr>
-                <td align="top">{project.name}</td>
-                <td align="top">
-                    <f:format.crop maxCharacters="100">{project.description}</f:format.crop>
-                </td>
-                <td align="top">{project.image}</td>
-            </tr>
-        </f:for>
-    </table>
-    <f:debug title="" inline="1">{_all}</f:debug>
+    <div class="projects">
+        <h2 class="projects__section-title">My Wordpress Projects</h2>
+        <div class="projects__container">
+            <f:for each="{projects}" as="project">
+                <div class="projects__card">
+                    <f:for each="{project.mainImage}" as="projectimage" iteration="iterator">
+                        <f:image image="{projectimage}" class="projects__image" />
+                    </f:for>
+                    <div class="projects__text">
+                        <h2 class="projects__title">{project.name}</h2>
+                        <p class="projects__description">{project.description}</p>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </div>
 </html>
